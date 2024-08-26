@@ -1,11 +1,11 @@
 import { Controller, Post, Body, Get, Query } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { CreateBoard } from '../../application/use-cases/create-board';
-import { ListBoards } from '../../application/use-cases/list-boards';
+import { CreateBoard } from '../../../application/use-cases/create-board';
+import { ListBoards } from '../../../application/use-cases/list-boards';
 
-import { Board } from '../../domain/entities/board';
-import { CreateBoardDto } from '../dtos/create-board';
-import { ListBoardsDto } from '../dtos/list-board';
+import { Board } from '../../../domain/entities/board';
+import { CreateBoardDto } from '../../dtos/create-board';
+import { ListBoardsDto } from '../../dtos/list-board';
 
 
 @ApiTags('boards')

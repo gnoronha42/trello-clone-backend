@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { BoardSchema } from '../schemas/board.schema';
 import { Board } from 'src/domain/entities/board';
+import { Card } from 'src/domain/entities/Cards';
+
+import { Column } from 'src/domain/entities/column';
 import { BoardRepository } from 'src/domain/repositories/board-repository.interface';
 
 @Injectable()
@@ -18,12 +20,35 @@ export class MongooseBoardRepository implements BoardRepository {
     await createdBoard.save();
   }
 
+  async findAll(): Promise<Board[]> {
+    return this.boardModel.find().exec();
+  }
+
+  async addColumn(boardId: string, column: Column): Promise<Board> {
+    const board = await this.findById(boardId);
+    if (!board) {
+      throw new Error('Board not found');
+    }
+    board.columns.push(column);
+    await this.save(board);
+    return board;
+  }
+
   create(boardData: Partial<Board>): Board {
     return new this.boardModel(boardData);
   }
 
-  findAll(): Promise<Board[]> {
-    return this.boardModel.find().exec();
-    
+  async addCard(boardId: string, columnId: string, card: Card): Promise<Board> {
+    const board = await this.findById(boardId);
+    if (!board) {
+      throw new Error('Board not found');
+    }
+    const column = board.columns.find(col => col._id === columnId);
+    if (!column) {
+      throw new Error('Column not found');
+    }
+    column.cards.push(card);
+    await this.save(board);
+    return board;
   }
 }
