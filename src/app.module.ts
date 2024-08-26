@@ -8,6 +8,7 @@ import { MongooseBoardRepository } from './infra/databases/mongoose/repositories
 import { InMemoryBoardRepository } from './infra/databases/adapters/in-memory/in-memory-board-repository'; 
 import { BoardController } from './presentation/controllers/board.controller';
 import { databaseConfig } from './infra/config/database.config';
+import { ListBoards } from './application/use-cases/list-boards';
 
 @Module({
   imports: [
@@ -18,6 +19,8 @@ import { databaseConfig } from './infra/config/database.config';
   providers: [
     CreateBoard,
     { provide: 'BoardRepository', useClass: InMemoryBoardRepository }, 
+    ListBoards,
+    { provide: 'BoardRepository', useClass: MongooseBoardRepository },
   ],
 })
 export class AppModule {}

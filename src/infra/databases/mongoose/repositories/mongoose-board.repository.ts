@@ -21,4 +21,9 @@ export class MongooseBoardRepository implements BoardRepository {
   create(boardData: Partial<Board>): Board {
     return new this.boardModel(boardData);
   }
+
+  findAll(): Promise<Board[]> {
+    return this.boardModel.find().exec();
+    
+  }
 }
