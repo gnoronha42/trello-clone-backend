@@ -1,8 +1,7 @@
 import { Controller, Post, Body, Param } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { AddColumn } from '@src/application/use-cases/add-column';
-import { Board } from '@src/domain/entities/board';
-
+import { AddColumn } from 'src/application/use-cases/add-column';
+import { Board } from 'src/domain/entities/board';
 import { CreateColumnDto } from 'src/presentation/dtos/create-column';
 
 

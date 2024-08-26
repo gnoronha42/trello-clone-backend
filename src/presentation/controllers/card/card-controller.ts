@@ -1,8 +1,9 @@
 import { Controller, Post, Body, Param } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { AddCard } from '@src/application/use-cases/add-card';
-import { Board } from '@src/domain/entities/board';
-import { CreateCardDto } from '@src/presentation/dtos/create-card';
+import { AddCard } from 'src/application/use-cases/add-card';
+import { Board } from 'src/domain/entities/board';
+import { CreateCardDto } from 'src/presentation/dtos/create-card';
+
 
 
 
