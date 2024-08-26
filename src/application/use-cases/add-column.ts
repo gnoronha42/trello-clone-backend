@@ -3,8 +3,8 @@ import { Board } from '../../domain/entities/board';
 import { Column } from '../../domain/entities/column';
 import { Inject } from '@nestjs/common';
 import { v4 as uuidv4 } from 'uuid';
-import { CreateColumnDto } from 'src/presentation/dtos/create-column';
-import { Card } from 'src/domain/entities/Cards';
+import { CreateColumnDto } from '../../presentation/dtos/create-column';
+import { Card } from '../../domain/entities/Cards';
 
 export class AddColumn {
   constructor(

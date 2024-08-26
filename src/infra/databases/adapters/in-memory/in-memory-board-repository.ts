@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Types } from 'mongoose';
-import { Board } from 'src/domain/entities/board';
-import { Card } from 'src/domain/entities/Cards';
-import { Column } from 'src/domain/entities/column';
-import { BoardRepository } from 'src/domain/repositories/board-repository.interface';
+import { Board } from '../../../../domain/entities/board';
+import { Card } from '../../../../domain/entities/Cards';
+import { Column } from '../../../../domain/entities/column';
+import { BoardRepository } from '../../../../domain/repositories/board-repository.interface';
 
 import { v4 as uuidv4 } from 'uuid';
 
