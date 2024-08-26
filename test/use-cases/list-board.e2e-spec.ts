@@ -1,6 +1,7 @@
-import { ListBoards } from "src/application/use-cases/list-boards";
-import { Board } from "src/domain/entities/board";
-import { BoardRepository } from "src/domain/repositories/board-repository.interface";
+
+import { ListBoards } from "../../src/application/use-cases/list-boards";
+import { Board } from "../../src/domain/entities/board";
+import { BoardRepository } from "../../src/domain/repositories/board-repository.interface";
 
 
 describe('ListBoards', () => {

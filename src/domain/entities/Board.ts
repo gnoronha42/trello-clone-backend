@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Column } from './column';
 
+
 export class Board {
   @ApiProperty({ description: 'The unique identifier of the board' })
   _id: string;
