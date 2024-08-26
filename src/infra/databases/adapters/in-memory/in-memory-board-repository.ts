@@ -1,7 +1,6 @@
 import { Board } from "src/domain/entities/board";
 import { BoardRepository } from "src/domain/repositories/board-repository.interface";
 
-
 export class InMemoryBoardRepository implements BoardRepository {
   private boards: Board[] = [];
 
@@ -10,6 +9,25 @@ export class InMemoryBoardRepository implements BoardRepository {
   }
 
   async save(board: Board): Promise<void> {
-    this.boards.push(board);
+    const index = this.boards.findIndex(b => b.id === board.id);
+    if (index !== -1) {
+      this.boards[index] = board; 
+    } else {
+      this.boards.push(board); 
+    }
+  }
+
+  create(boardData: Partial<Board>): Board {
+    const exists = this.boards.some(b => b.id === boardData.id);
+    if (exists) {
+      throw new Error('Board already exists');
+    }
+    const newBoard = { ...boardData, id: this.generateId() } as Board;
+    this.boards.push(newBoard);
+    return newBoard;
+  }
+
+  private generateId(): string {
+    return Math.random().toString(36).substr(2, 9);
   }
 }

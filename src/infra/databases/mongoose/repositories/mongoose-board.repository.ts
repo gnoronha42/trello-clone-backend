@@ -17,4 +17,8 @@ export class MongooseBoardRepository implements BoardRepository {
     const createdBoard = new this.boardModel(board);
     await createdBoard.save();
   }
+
+  create(boardData: Partial<Board>): Board {
+    return new this.boardModel(boardData);
+  }
 }

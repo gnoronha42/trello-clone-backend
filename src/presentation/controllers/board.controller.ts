@@ -15,6 +15,6 @@ export class BoardController {
   @ApiResponse({ status: 201, description: 'The board has been successfully created.', type: Board })
   @ApiResponse({ status: 400, description: 'Invalid input.' })
   async create(@Body() createBoardDto: CreateBoardDto): Promise<Board> {
-    return this.createBoard.execute(createBoardDto.name);
+    return await this.createBoard.execute(createBoardDto.name);
   }
 }
