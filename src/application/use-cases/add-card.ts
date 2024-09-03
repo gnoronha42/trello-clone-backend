@@ -5,7 +5,7 @@ import { Inject } from '@nestjs/common';
 
 import { v4 as uuidv4 } from 'uuid';
 import { CreateCardDto } from '../../presentation/dtos/create-card';
-import { Card } from '../../domain/entities/Cards';
+import { Card } from '../../domain/entities/cards';
 
 export class AddCard {
   constructor(

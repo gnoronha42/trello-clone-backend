@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Board } from '../../../../domain/entities/board';
-import { Card } from '../../../../domain/entities/Cards';
+import { Card } from '../../../../domain/entities/cards';
 
 import { Column } from '../../../../domain/entities/column';
 import { BoardRepository } from '../../../../domain/repositories/board-repository.interface';

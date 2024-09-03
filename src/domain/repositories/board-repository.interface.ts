@@ -1,5 +1,5 @@
 import { Board } from '../entities/board';
-import { Card } from '../entities/Cards';
+import { Card } from '../entities/cards';
 import { Column } from '../entities/column';
 
 export interface BoardRepository {

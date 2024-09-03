@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Card } from './Cards';
+import { Card } from './cards';
 
 
 export class Column {
