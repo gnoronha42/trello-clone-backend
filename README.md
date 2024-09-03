@@ -1,85 +1,170 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🛠️ Projeto de Gerenciamento de Boards e Cards
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 📚 Descrição
+Este projeto é uma aplicação de gerenciamento de boards e cards, construída utilizando a arquitetura limpa (Clean Architecture) e princípios SOLID. A aplicação também integra um serviço de notificação usando RabbitMQ para eventos como a criação de boards e cards.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 🚀 Tecnologias Utilizadas
+- **Node.js:** Ambiente de execução JavaScript.
+- **TypeScript:** Superset do JavaScript que adiciona tipagem estática.
+- **Express:** Framework web para Node.js.
+- **NestJS:** Framework para construção de aplicações Node.js escaláveis e eficientes.
+- **Mongoose:** Biblioteca de modelagem de dados para MongoDB.
+- **RabbitMQ:** Mensageria para comunicação assíncrona entre serviços.
+- **amqplib:** Biblioteca para interagir com RabbitMQ.
 
-## Description
+## 🏗️ Arquitetura
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### Clean Architecture
+A Clean Architecture, proposta por Robert C. Martin (Uncle Bob), visa separar a lógica de negócios da lógica de infraestrutura, facilitando a manutenção e evolução do sistema. A estrutura do projeto é dividida em camadas:
 
-## Project setup
+- **Application:** Contém os casos de uso da aplicação.
+- **Domain:** Contém as entidades e serviços de domínio.
+- **Infrastructure:** Contém a implementação de infraestrutura, como repositórios e serviços externos.
+- **Interfaces:** Contém os controladores e interfaces de entrada/saída.
 
-```bash
-$ yarn install
-```
+### Princípios SOLID
+A aplicação segue os princípios SOLID para garantir um código mais limpo, modular e fácil de manter:
 
-## Compile and run the project
+- **Single Responsibility Principle (SRP):** Cada classe tem uma única responsabilidade.
+- **Open/Closed Principle (OCP):** Classes são abertas para extensão, mas fechadas para modificação.
+- **Liskov Substitution Principle (LSP):** Subtipos devem ser substituíveis por seus tipos base.
+- **Interface Segregation Principle (ISP):** Muitas interfaces específicas são melhores do que uma interface geral.
+- **Dependency Inversion Principle (DIP):** Dependa de abstrações, não de implementações.
 
-```bash
-# development
-$ yarn run start
+## 📂 Estrutura de Pastas
+A estrutura de pastas do projeto é organizada de forma a refletir as camadas da arquitetura limpa, facilitando a navegação e manutenção do código.
 
-# watch mode
-$ yarn run start:dev
+## 🛠️ Configuração e Execução
 
-# production mode
-$ yarn run start:prod
-```
+### Pré-requisitos
+- Node.js
+- MongoDB
+- RabbitMQ
 
-## Run tests
 
-```bash
-# unit tests
-$ yarn run test
+### Instalação
 
-# e2e tests
-$ yarn run test:e2e
+1. Clone o repositório:
 
-# test coverage
-$ yarn run test:cov
-```
+   ```bash
+   git clone https://github.com/usuario/projeto-gerenciamento-boards-cards.git
+   ```
 
-## Resources
+2. Instale as dependências:
 
-Check out a few resources that may come in handy when working with NestJS:
+   ```bash
+   cd projeto-gerenciamento-boards-cards
+   npm install
+   ```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+3. Configure as variáveis de ambiente:
 
-## Support
+   Crie um arquivo `.env` na raiz do projeto.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+   Adicione as seguintes variáveis conforme a necessidade:
 
-## Stay in touch
+   ```env
+   MONGO_URI=mongodb://localhost:27017/seu-banco-de-dados
+   RABBITMQ_URL=amqp://localhost
+   ```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+4. Inicie o MongoDB e RabbitMQ:
 
-## License
+   - **MongoDB:** Certifique-se de que o serviço MongoDB esteja em execução. Você pode iniciar o MongoDB localmente ou usar um serviço hospedado.
+   - **RabbitMQ:** Inicie o RabbitMQ localmente, usando `rabbitmq-server` ou utilize um serviço hospedado.
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### Execução
+
+1. Inicie o servidor:
+
+   ```bash
+   npm run start
+   ```
+
+   O servidor estará disponível na porta definida nas variáveis de ambiente ou na porta padrão (3000).
+
+2. Inicie os consumidores RabbitMQ:
+
+   ```bash
+   npm run start:consumers
+   ```
+
+   Os consumidores serão responsáveis por processar as mensagens de eventos (como a criação de boards e cards) enviadas ao RabbitMQ.
+
+3. Acesse a aplicação:
+
+   Acesse a aplicação através do navegador em `http://localhost:3000` (ou a porta configurada).
+
+### 📬 Endpoints
+
+#### Criar Board
+
+- **URL:** `/boards`
+- **Método:** `POST`
+- **Body:**
+
+   ```json
+   {
+     "title": "Nome do Board",
+     "description": "Descrição do Board"
+   }
+   ```
+
+- **Resposta de Sucesso (200):**
+
+   ```json
+   {
+     "id": "ID do Board",
+     "title": "Nome do Board",
+     "description": "Descrição do Board",
+     "createdAt": "Data de Criação"
+   }
+   ```
+
+#### Criar Card
+
+- **URL:** `/cards`
+- **Método:** `POST`
+- **Body:**
+
+   ```json
+   {
+     "boardId": "ID do Board",
+     "title": "Nome do Card",
+     "description": "Descrição do Card"
+   }
+   ```
+
+- **Resposta de Sucesso (200):**
+
+   ```json
+   {
+     "id": "ID do Card",
+     "boardId": "ID do Board",
+     "title": "Nome do Card",
+     "description": "Descrição do Card",
+     "createdAt": "Data de Criação"
+   }
+   ```
+
+### 🧪 Testes
+
+Para executar os testes, utilize o comando:
+
+   ```bash
+   npm run test
+   ```
+
+Os testes cobrem as principais funcionalidades da aplicação, garantindo que os casos de uso, entidades e serviços estejam funcionando conforme o esperado.
+
+#### Testes Unitários
+
+Os testes unitários cobrem a lógica de negócios das camadas `Application` e `Domain`.
+
+#### Testes de Integração
+
+Os testes de integração validam a comunicação entre os componentes da aplicação, incluindo interações com o MongoDB e RabbitMQ.
+
+### 📜 Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
